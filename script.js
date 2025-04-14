@@ -113,21 +113,26 @@ document.addEventListener('DOMContentLoaded', function() {
             retina_detect: true
         });
     
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        menuToggle.addEventListener('click', function() {
-            mobileMenu.classList.toggle('translate-x-full');
-        });
-    
-        // Close mobile menu when clicking on a link
         const mobileLinks = document.querySelectorAll('.mobile-link');
         mobileLinks.forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // mencegah perilaku default anchor
+        
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+        
+                // Tutup menu dulu
                 mobileMenu.classList.add('translate-x-full');
+        
+                // Scroll ke section setelah animasi selesai (delay match transition 300ms)
+                setTimeout(() => {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }, 200);
             });
         });
+        
     
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
