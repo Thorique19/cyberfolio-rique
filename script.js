@@ -238,22 +238,34 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     
         // Form submission (prevent default)
-        const contactForm = document.querySelector('.contact-form form');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Here you would usually send the form data to a server
-                // For demonstration, we'll just clear the form
-                const inputs = this.querySelectorAll('input, textarea');
-                inputs.forEach(input => input.value = '');
-                
-                // Show a success message
-                alert('Message sent successfully!');
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            
+            const formData = {
+            name: this.name.value,
+            email: this.email.value,
+            subject: this.subject.value,
+            message: this.message.value
+            };
+
+            fetch("https://script.google.com/macros/s/AKfycbxYS4PgbkAyRnArtST2ln8E-3MXXP1nZek3AfHsZR8th_grNcH4pwTdHqYOJDEe4sOc/exec", {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: {
+                "Content-Type": "application/json"
+            }
+            })
+            .then(response => response.json())
+            .then(data => {
+            alert(data.message || "Message sent!");
+            })
+            .catch(error => {
+            alert("Error sending message.");
+            console.error(error);
             });
-        }
-    
+        });
+
+
         // Intersection Observer for scroll animations
         const observerOptions = {
             root: null,
