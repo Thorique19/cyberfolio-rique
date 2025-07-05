@@ -433,27 +433,13 @@
                         <a href="http://wa.me/6289877951533" class="social-link"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                <div class="contactForm">
-                    <form class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="form-group">
-                                <input type="text" placeholder="Your Name" class="form-input">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" placeholder="Your Email" class="form-input">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Subject" class="form-input">
-                        </div>
-                        <div class="form-group">
-                            <textarea rows="5" placeholder="Your Message" class="form-textarea"></textarea>
-                        </div>
-                        <div class="form-submit">
-                            <button type="submit" class="btn-submit">Send Message <i class="fas fa-paper-plane ml-2"></i></button>
-                        </div>
-                    </form>
-                </div>
+                <form id="contactForm" class="space-y-6">
+                <input type="text" name="name" placeholder="Your Name" required class="form-input">
+                <input type="email" name="email" placeholder="Your Email" required class="form-input">
+                <input type="text" name="subject" placeholder="Subject" required class="form-input">
+                <textarea name="message" placeholder="Your Message" required class="form-textarea"></textarea>
+                <button type="submit" class="btn-submit">Send</button>
+                </form>
             </div>
         </div>
     </section>
