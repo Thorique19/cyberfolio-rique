@@ -31,6 +31,8 @@
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#contact" class="nav-link">Contact</a>
+                <a href="https://rique-blog.vercel.app/" class="nav-link">Blog</a>
+
             </div>
             <div class="menu-toggle md:hidden cursor-pointer">
                 <i class="fas fa-bars text-xl"></i>
@@ -433,13 +435,50 @@
                         <a href="http://wa.me/628987951533" class="social-link"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                <form id="contactForm" class="space-y-6">
-                <input type="text" name="name" placeholder="Your Name" required class="form-input">
-                <input type="email" name="email" placeholder="Your Email" required class="form-input">
-                <input type="text" name="subject" placeholder="Subject" required class="form-input">
-                <textarea name="message" placeholder="Your Message" required class="form-textarea"></textarea>
-                <button type="submit" class="btn-submit">Send</button>
-                </form>
+                    <form
+                    action="https://getform.io/f/awnwopob"
+                    method="POST"
+                    class="space-y-6 max-w-xl mx-auto"
+                    >
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Your Name"
+                        required
+                        class="form-input"
+                    />
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Your Email"
+                        required
+                        class="form-input"
+                    />
+
+                    <input
+                        type="text"
+                        name="subject"
+                        placeholder="Subject"
+                        required
+                        class="form-input"
+                    />
+
+                    <textarea
+                        name="message"
+                        placeholder="Your Message"
+                        required
+                        class="form-textarea"
+                    ></textarea>
+
+                    <!-- Honeypot anti-spam -->
+                    <input type="text" name="_gotcha" class="hidden" />
+
+                    <button type="submit" class="btn-submit">
+                        Send
+                    </button>
+                    </form>
+
             </div>
         </div>
     </section>
@@ -460,14 +499,14 @@
     </button>
 
     <!-- Loading Screen -->
-    <!-- <div id="loading-screen" class="fixed top-0 left-0 w-full h-full bg-black z-50 flex items-center justify-center">
+    <div id="loading-screen" class="fixed top-0 left-0 w-full h-full bg-black z-50 flex items-center justify-center">
         <div class="loader">
             <svg viewBox="0 0 80 80">
                 <circle id="loader-circle" cx="40" cy="40" r="32"></circle>
             </svg>
             <div class="loading-text font-['Orbitron'] mt-4">LOADING</div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Particles.js CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>

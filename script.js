@@ -237,34 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     
-        // Form submission (prevent default)
-        document.getElementById("contactForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-            
-            const formData = {
-            name: this.name.value,
-            email: this.email.value,
-            subject: this.subject.value,
-            message: this.message.value
-            };
-
-            fetch("https://script.google.com/macros/s/AKfycbxYS4PgbkAyRnArtST2ln8E-3MXXP1nZek3AfHsZR8th_grNcH4pwTdHqYOJDEe4sOc/exec", {
-            method: "POST",
-            body: JSON.stringify(formData),
-            headers: {
-                "Content-Type": "application/json"
-            }
-            })
-            .then(response => response.json())
-            .then(data => {
-            alert(data.message || "Message sent!");
-            })
-            .catch(error => {
-            alert("Error sending message.");
-            console.error(error);
-            });
-        });
-
+    
 
         // Intersection Observer for scroll animations
         const observerOptions = {
